@@ -7,5 +7,14 @@
   },
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true
-  }
+  },
+  "cSpell.words": [
+    "googlechrome",
+    "nodedotjs",
+    "cloudflareworkers",
+    "flydotio",
+    "electronjs",
+    "tanstack",
+    "lucide"
+  ]
 }
