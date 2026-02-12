@@ -1,13 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Github, Mail, Linkedin } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
-import { Github, Mail, Linkedin } from "lucide-react";
-
-const NAV_LINKS = [
-  { label: "Overview", to: "/" },
-  { label: "Studio", to: "/" },
-  { label: "Benchmarks", to: "/" },
-];
+import { Button } from "@base-ui-components/react/button";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,29 +20,38 @@ export function Header() {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <TopBanner />
-
       <div className="container flex h-16 items-center justify-between">
         <Logo />
-
-        <nav className="flex items-center gap-8 border border-border p-2 px-6 rounded-full bg-secondary/50 backdrop-blur-sm shadow-xs">
-          {NAV_LINKS.map((link) => (
-            <NavLink key={link.label} {...link} />
-          ))}
-        </nav>
 
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-1">
             {[
-              { Icon: Github, label: "GitHub", href: "#" },
-              { Icon: Linkedin, label: "LinkedIn", href: "#" },
-              { Icon: Mail, label: "Email", href: "#" },
-            ].map(({ Icon, label, href }) => (
+              {
+                Icon: Github,
+                label: "GitHub",
+                href: "https://github.com/KruyTharin",
+                external: true,
+              },
+              {
+                Icon: Linkedin,
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/in/tharin-kruy-26469b261/",
+                external: true,
+              },
+              {
+                Icon: Mail,
+                label: "Email",
+                href: "mailto:kruytharin17@gmail.com",
+                external: false,
+              },
+            ].map(({ Icon, label, href, external }) => (
               <a
                 key={label}
                 href={href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
                 aria-label={label}
-                className="group relative p-2 text-foreground/40 hover:text-foreground transition-colors"
+                className="group relative p-2 text-foreground/40 hover:text-foreground transition-colors outline-hidden"
               >
                 <Icon className="w-4 h-4 shrink-0" />
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full"></span>
@@ -63,43 +66,12 @@ export function Header() {
   );
 }
 
-function TopBanner() {
-  return (
-    <div className="bg-secondary border-b border-border py-1.5 px-4 text-center">
-      <p className="text-[11px] font-medium text-foreground/60 tracking-wide uppercase">
-        ✨ Currently{" "}
-        <span className="text-foreground font-bold">
-          open for new opportunities
-        </span>{" "}
-        — Let's build something amazing together!
-      </p>
-    </div>
-  );
-}
-
 function Logo() {
   return (
-    <Link to="/" className="flex items-center gap-2 group relative">
-      <span className="text-xl font-bold tracking-tight text-foreground uppercase italic leading-none">
-        rin.dev
+    <Link to="/" className="flex items-center group">
+      <span className="text-xl font-black tracking-tighter text-foreground uppercase leading-none hover:text-foreground/60 transition-colors">
+        Tharin.
       </span>
-
-      <span className="absolute -right-3 bottom-2.5 flex h-2 w-2">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-foreground/50 opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-2 w-2 bg-foreground"></span>
-      </span>
-    </Link>
-  );
-}
-
-function NavLink({ label, to }: { label: string; to: string }) {
-  return (
-    <Link
-      to={to}
-      className="text-sm font-medium text-foreground/60 hover:text-foreground transition-colors relative group py-1"
-    >
-      {label}
-      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-foreground transition-all group-hover:w-full"></span>
     </Link>
   );
 }
@@ -155,14 +127,12 @@ function ThemeToggle() {
         ];
         document.documentElement.animate(
           {
-            clipPath: isDark ? [...clipPath].reverse() : clipPath,
+            clipPath: clipPath,
           },
           {
-            duration: 500,
-            easing: "ease-in-out",
-            pseudoElement: isDark
-              ? "::view-transition-old(root)"
-              : "::view-transition-new(root)",
+            duration: 400,
+            easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+            pseudoElement: "::view-transition-new(root)",
           },
         );
       });
@@ -171,9 +141,9 @@ function ThemeToggle() {
   );
 
   return (
-    <button
+    <Button
       onClick={toggleTheme}
-      className="p-2.5 hover:bg-secondary rounded-xl transition-colors border border-transparent hover:border-border group"
+      className="p-2.5 hover:bg-secondary rounded-xl transition-colors border border-transparent hover:border-border group outline-hidden"
       aria-label="Toggle theme"
     >
       {isDark ? (
@@ -181,6 +151,6 @@ function ThemeToggle() {
       ) : (
         <Sun className="h-5 w-5 text-foreground/60 group-hover:text-foreground transition-colors" />
       )}
-    </button>
+    </Button>
   );
 }
