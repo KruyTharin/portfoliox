@@ -20,7 +20,7 @@ export const EXPERIENCES: Experience[] = [
       "Engineered a core service provider for facial verification and recognition using high-dimensional vector embeddings.",
       "Architected and deployed production-ready identity verification solutions powered by AI.",
     ],
-    tags: ["NestJS", "Vault", "Qdrant", "PostgreSQL"],
+    tags: ["Nest.js", "Vault", "Qdrant", "PostgreSQL"],
   },
   {
     company: "Chip Mong Bank",
@@ -34,7 +34,7 @@ export const EXPERIENCES: Experience[] = [
       "Developed a portal to manage settings for mobile banking and internet banking platforms.",
       "Created several mini-apps to expand digital services within the bank's ecosystem.",
     ],
-    tags: ["NestJS", "Vue.js", "Java Spring", "TailwindCSS"],
+    tags: ["Nest.Js", "Vue.js", "Java Spring", "Tailwind CSS"],
   },
   {
     company: "Mantisy",
@@ -47,7 +47,7 @@ export const EXPERIENCES: Experience[] = [
       "Developed back-office applications to manage data for parking and booking services.",
       "Created and maintained websites for organizations and several government projects.",
     ],
-    tags: ["NestJS", "Vue.js", "Nuxt.js", "TailwindCSS"],
+    tags: ["Nest.js", "Vue.js", "Nuxt.js", "Tailwind CSS"],
   },
   {
     company: "OneWorld Technology",
@@ -60,6 +60,6 @@ export const EXPERIENCES: Experience[] = [
       "Designed and developed multiple responsive websites with a focus on clean user interfaces.",
       "Implemented Strapi CMS to allow clients to easily manage and update their website content.",
     ],
-    tags: ["Next.js", "Strapi", "TailwindCSS"],
+    tags: ["Next.js", "Strapi", "Tailwind CSS"],
   },
 ];

@@ -14,10 +14,11 @@ export function Badge({
   return (
     <span
       className={cn(
-        "px-3 py-1 w-fit text-xs rounded-full inline-flex items-center justify-center transition-colors",
-        variant === "default" && "bg-secondary text-foreground/80",
+        "px-4 py-1.5 w-fit text-xs font-mono uppercase tracking-widest transition-all",
+        variant === "default" &&
+          "bg-secondary text-foreground/70 hover:text-foreground",
         variant === "outline" &&
-          "bg-transparent border border-border text-foreground/60",
+          "bg-transparent border border-border text-foreground/60 hover:border-foreground/40 hover:text-foreground",
         className,
       )}
       {...props}

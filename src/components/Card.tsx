@@ -16,9 +16,10 @@ export function Card({
   return (
     <div
       className={cn(
-        "border border-border bg-background transition-all",
+        "border border-border bg-background transition-all duration-700",
         padding,
-        hover && "group hover:border-foreground/20",
+        hover &&
+          "group hover:border-foreground/20 hover:shadow-lg hover:shadow-black/2",
         className,
       )}
       {...props}

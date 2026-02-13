@@ -22,13 +22,13 @@ export function SocialLinks({
           rel={external !== false ? "noopener noreferrer" : undefined}
           aria-label={label}
           className={cn(
-            "group relative transition-colors text-foreground/40 hover:text-foreground",
-            showUnderline && "p-2",
+            "group relative transition-all duration-500 text-foreground/30 hover:text-foreground",
+            showUnderline && "px-2 py-1",
           )}
         >
           <Icon className={cn("shrink-0", iconClassName)} />
           {showUnderline && (
-            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
+            <span className="absolute bottom-0 left-2 w-0 h-[0.5px] bg-foreground transition-all duration-500 group-hover:w-[calc(100%-16px)]" />
           )}
         </a>
       ))}
