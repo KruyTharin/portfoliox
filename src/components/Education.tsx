@@ -7,7 +7,7 @@ export function Education() {
     {
       school: "Norton University",
       degree: "Bachelor of Software Engineering",
-      period: "2021 - 2024",
+      period: "2021 - 2025",
       description:
         "Focused on Software Engineering, Data Structures, and Algorithms. Developed a strong foundation in modern software development methodologies, computer science principles, and system architecture.",
       highlights: [
