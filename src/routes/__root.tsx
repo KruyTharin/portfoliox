@@ -16,7 +16,39 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "rin.dev | Digital Experience Designer",
+        title:
+          "Tharin Kruy | Full-stack Engineer & Digital Experience Designer",
+      },
+      {
+        name: "description",
+        content:
+          "Tharin Kruy is a Full-stack Engineer based in Phnom Penh, specializing in scalable web applications, AI integration, and high-performance backend systems.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Tharin Kruy, Full-stack Engineer, Web Development, NestJS, React, AI Integration, Software Engineer Cambodia",
+      },
+      {
+        property: "og:title",
+        content: "Tharin Kruy | Full-stack Engineer",
+      },
+      {
+        property: "og:description",
+        content:
+          "Digital Experience Designer and Full-stack Engineer building the future of web applications.",
+      },
+      {
+        property: "og:image",
+        content: "/profile.png",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
       },
     ],
     links: [

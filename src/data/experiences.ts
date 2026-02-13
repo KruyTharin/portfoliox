@@ -20,7 +20,7 @@ export const EXPERIENCES: Experience[] = [
       "Engineered a core service provider for facial verification and recognition using high-dimensional vector embeddings.",
       "Architected and deployed production-ready identity verification solutions powered by AI.",
     ],
-    tags: ["Nest.js", "Vault", "Qdrant", "PostgreSQL"],
+    tags: ["Nest.js", "Vault", "Qdrant", "Postgre SQL"],
   },
   {
     company: "Chip Mong Bank",

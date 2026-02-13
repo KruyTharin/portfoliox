@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Send } from "lucide-react";
 
 export const SOCIAL_LINKS = [
   {
@@ -11,6 +11,12 @@ export const SOCIAL_LINKS = [
     Icon: Linkedin,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/tharin-kruy-26469b261/",
+    external: true,
+  },
+  {
+    Icon: Send,
+    label: "Telegram",
+    href: "https://t.me/k3_rin",
     external: true,
   },
   {

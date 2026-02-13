@@ -9,7 +9,13 @@ export function Education() {
       degree: "Bachelor of Software Engineering",
       period: "2021 - 2024",
       description:
-        "Focused on Software Engineering, Data Structures, and Algorithms.",
+        "Focused on Software Engineering, Data Structures, and Algorithms. Developed a strong foundation in modern software development methodologies, computer science principles, and system architecture.",
+      highlights: [
+        "Advanced Web Technologies",
+        "Database Management Systems",
+        "System Analysis and Design",
+        "Object-Oriented Programming (Java/C#)",
+      ],
     },
     // Add more if needed
   ];
@@ -35,9 +41,22 @@ export function Education() {
                   </div>
                   <Badge variant="outline">{edu.period}</Badge>
                 </div>
-                <p className="text-foreground/70 leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed mb-6">
                   {edu.description}
                 </p>
+                {edu.highlights && (
+                  <div className="flex flex-wrap gap-2">
+                    {edu.highlights.map((highlight) => (
+                      <Badge
+                        key={highlight}
+                        variant="default"
+                        className="bg-foreground/5 text-foreground/60 border-none"
+                      >
+                        {highlight}
+                      </Badge>
+                    ))}
+                  </div>
+                )}
               </Card>
             ))}
           </div>
