@@ -35,7 +35,7 @@ export function Hero() {
       <div className="container px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight md:leading-none">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight uppercase">
               Tharin Kruy
             </h1>
 
