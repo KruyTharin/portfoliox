@@ -1,32 +1,22 @@
 import { EXPERIENCES, Experience } from "../data/experiences";
-import { ExternalLink, ArrowLeft } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { ExternalLink } from "lucide-react";
+import { SubpageHeader } from "./SubpageHeader";
+import { Card } from "./Card";
+import { Badge } from "./Badge";
 
 export function WorkExperience() {
   return (
     <section id="experience" className="pt-12 pb-32">
       <div className="container px-6">
         <div className="max-w-5xl mx-auto">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-foreground/60 hover:text-foreground transition-colors mb-12"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Link>
-
-          <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Work Experience
-            </h2>
-            <p className="text-foreground/60 text-lg">
-              Professional journey and key contributions
-            </p>
-          </div>
+          <SubpageHeader
+            title="Work Experience"
+            description="My professional journey, key roles, and major contributions in the software industry."
+          />
 
           <div className="space-y-8">
-            {EXPERIENCES.map((exp, index) => (
-              <ExperienceItem key={exp.company} exp={exp} index={index} />
+            {EXPERIENCES.map((exp) => (
+              <ExperienceItem key={exp.company} exp={exp} />
             ))}
           </div>
         </div>
@@ -35,10 +25,10 @@ export function WorkExperience() {
   );
 }
 
-function ExperienceItem({ exp, index }: { exp: Experience; index: number }) {
+function ExperienceItem({ exp }: { exp: Experience }) {
   return (
-    <div className="group border border-border p-8 hover:border-foreground/20 transition-all bg-background">
-      <div className="flex items-start justify-between mb-4">
+    <Card>
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-2">
             {exp.website ? (
@@ -55,27 +45,29 @@ function ExperienceItem({ exp, index }: { exp: Experience; index: number }) {
               <h3 className="text-2xl font-bold">{exp.company}</h3>
             )}
           </div>
-          <div className="text-foreground/60 mb-1">{exp.role}</div>
-          <div className="text-sm text-foreground/40">{exp.period}</div>
+          <div className="text-foreground/60 text-lg mb-1">{exp.role}</div>
+          <div className="text-sm text-foreground/40 font-medium">
+            {exp.period}
+          </div>
         </div>
       </div>
 
-      <p className="text-foreground/70 leading-relaxed mb-6">
+      <p className="text-foreground/70 leading-relaxed mb-8 text-lg">
         {exp.description}
       </p>
 
       {exp.achievements && exp.achievements.length > 0 && (
-        <div className="mb-6">
-          <div className="text-xs font-semibold text-foreground/40 mb-3 uppercase tracking-wider">
+        <div className="mb-8">
+          <div className="text-xs font-semibold text-foreground/40 mb-4 uppercase tracking-widest">
             Key Achievements
           </div>
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {exp.achievements.map((achievement, i) => (
               <li
                 key={i}
-                className="flex gap-3 text-sm text-foreground/60 leading-relaxed"
+                className="flex gap-3 text-foreground/60 leading-relaxed"
               >
-                <span className="text-foreground/30">→</span>
+                <span className="text-foreground/30 mt-1">→</span>
                 {achievement}
               </li>
             ))}
@@ -85,14 +77,11 @@ function ExperienceItem({ exp, index }: { exp: Experience; index: number }) {
 
       <div className="flex flex-wrap gap-2">
         {exp.tags.map((tag) => (
-          <span
-            key={tag}
-            className="px-3 py-1 text-xs bg-secondary border border-border rounded-full"
-          >
+          <Badge key={tag} variant="outline">
             {tag}
-          </span>
+          </Badge>
         ))}
       </div>
-    </div>
+    </Card>
   );
 }

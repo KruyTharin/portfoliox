@@ -2,7 +2,6 @@ import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { ThemeToggle } from "../components/ThemeToggle";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
-import { Tooltip } from "@base-ui-components/react/tooltip";
 
 import appCss from "../styles.css?url";
 
@@ -25,6 +24,16 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "/profile.png",
+      },
+      {
+        rel: "shortcut icon",
+        type: "image/png",
+        href: "/profile.png",
+      },
     ],
   }),
 
@@ -38,11 +47,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <Tooltip.Provider delay={0}>
-          <ThemeToggle />
-          {/* Layout */}
-          <main>{children}</main>
-        </Tooltip.Provider>
+        <ThemeToggle />
+        <main>{children}</main>
         <TanStackDevtools
           config={{
             position: "bottom-right",
