@@ -37,15 +37,35 @@ export const Route = createRootRoute({
       },
       {
         property: "og:image",
-        content: "https://rin.dev/profile.png",
+        content: "https://www.rin-dev.com/profile.png",
+      },
+      {
+        property: "og:image:secure_url",
+        content: "https://www.rin-dev.com/profile.png",
+      },
+      {
+        property: "og:image:type",
+        content: "image/png",
+      },
+      {
+        property: "og:image:width",
+        content: "1200",
+      },
+      {
+        property: "og:image:height",
+        content: "630",
       },
       {
         property: "og:url",
-        content: "https://rin.dev",
+        content: "https://www.rin-dev.com",
       },
       {
         property: "og:type",
         content: "website",
+      },
+      {
+        property: "og:site_name",
+        content: "Tharin Kruy Portfolio",
       },
       {
         name: "twitter:card",
@@ -61,7 +81,7 @@ export const Route = createRootRoute({
       },
       {
         name: "twitter:image",
-        content: "https://rin.dev/profile.png",
+        content: "https://www.rin-dev.com/profile.png",
       },
     ],
     links: [

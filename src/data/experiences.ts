@@ -20,7 +20,7 @@ export const EXPERIENCES: Experience[] = [
       "Engineered a core service provider for facial verification and recognition using high-dimensional vector embeddings.",
       "Architected and deployed production-ready identity verification solutions powered by AI.",
     ],
-    tags: ["Nest.js", "Vault", "Qdrant", "Postgre SQL"],
+    tags: ["Nest.js", "Vault", "Qdrant", "PostgreSQL"],
   },
   {
     company: "Chip Mong Bank",
@@ -34,7 +34,7 @@ export const EXPERIENCES: Experience[] = [
       "Developed a portal to manage settings for mobile banking and internet banking platforms.",
       "Created several mini-apps to expand digital services within the bank's ecosystem.",
     ],
-    tags: ["Nest.Js", "Vue.js", "Java Spring", "Tailwind CSS"],
+    tags: ["Java Spring", "Nest.Js", "Vue.js", "PostgreSQL", "Tailwind CSS"],
   },
   {
     company: "Mantisy",
