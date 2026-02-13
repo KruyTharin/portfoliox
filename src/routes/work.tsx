@@ -28,6 +28,18 @@ export const Route = createFileRoute("/work")({
         content: "https://www.rin-dev.com/profile.png",
       },
       {
+        property: "og:image:width",
+        content: "1024",
+      },
+      {
+        property: "og:image:height",
+        content: "1024",
+      },
+      {
+        property: "og:image:alt",
+        content: "Tharin Kruy - Work Experience",
+      },
+      {
         name: "twitter:title",
         content: "Work Experience | Tharin Kruy",
       },
@@ -38,6 +50,10 @@ export const Route = createFileRoute("/work")({
       {
         name: "twitter:image",
         content: "https://www.rin-dev.com/profile.png",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
       },
     ],
   }),

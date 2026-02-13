@@ -28,6 +28,18 @@ export const Route = createFileRoute("/tech")({
         content: "https://www.rin-dev.com/profile.png",
       },
       {
+        property: "og:image:width",
+        content: "1024",
+      },
+      {
+        property: "og:image:height",
+        content: "1024",
+      },
+      {
+        property: "og:image:alt",
+        content: "Tharin Kruy - Tech Stack",
+      },
+      {
         name: "twitter:title",
         content: "Tech Stack | Tharin Kruy",
       },
@@ -39,6 +51,10 @@ export const Route = createFileRoute("/tech")({
       {
         name: "twitter:image",
         content: "https://www.rin-dev.com/profile.png",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
       },
     ],
   }),

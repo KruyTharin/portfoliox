@@ -49,11 +49,15 @@ export const Route = createRootRoute({
       },
       {
         property: "og:image:width",
-        content: "1200",
+        content: "1024",
       },
       {
         property: "og:image:height",
-        content: "630",
+        content: "1024",
+      },
+      {
+        property: "og:image:alt",
+        content: "Tharin Kruy - Full-stack Engineer",
       },
       {
         property: "og:url",
@@ -120,7 +124,7 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" prefix="og: https://ogp.me/ns#">
       <head>
         <HeadContent />
       </head>
