@@ -7,6 +7,7 @@ import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
+    title: "Tharin Kruy | Full-stack Engineer & Digital Experience Designer",
     meta: [
       {
         charSet: "utf-8",
@@ -14,10 +15,6 @@ export const Route = createRootRoute({
       {
         name: "viewport",
         content: "width=device-width, initial-scale=1",
-      },
-      {
-        title:
-          "Tharin Kruy | Full-stack Engineer & Digital Experience Designer",
       },
       {
         name: "description",
@@ -40,7 +37,11 @@ export const Route = createRootRoute({
       },
       {
         property: "og:image",
-        content: "/profile.png",
+        content: "https://rin.dev/profile.png",
+      },
+      {
+        property: "og:url",
+        content: "https://rin.dev",
       },
       {
         property: "og:type",
@@ -50,8 +51,33 @@ export const Route = createRootRoute({
         name: "twitter:card",
         content: "summary_large_image",
       },
+      {
+        name: "twitter:title",
+        content: "Tharin Kruy | Full-stack Engineer",
+      },
+      {
+        name: "twitter:description",
+        content: "Full-stack Engineer building the future of web apps.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://rin.dev/profile.png",
+      },
     ],
     links: [
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
